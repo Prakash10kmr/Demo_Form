@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"> 
     <title>Submit this form</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <img src="img/bg.jpg" alt="Background image">
     <div class="container">
-        This is My Form
+        <h1>This is My Sample Form</h1>
+        <h3>Please Enter your Details Here.</h3>
+        <form action="index.php" method="post">
+            <input type="text" name="name" id="name" placeholder="     Enter Your Full Name" >
+            <input type="text" name="gender" id="gender" placeholder="     Enter Your Gender" >
+            <input type="text" name="age" id="age" placeholder="     Enter Your age" >
+            <input type="email" name="email" id="email" placeholder="     Enter Your email" >
+            <input type="phone" name="phone" id="phone" placeholder="     Enter Your Phone no" >
+            <input type="text" name="marital" id="marital" placeholder="     Enter Your Marital Status" >
+            <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Enter any other details here."></textarea>
+            <div class="button">
+                <button class="btn">Submit</button>
+            </div>
+        </form>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
