@@ -3,12 +3,10 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Noto Sans JP', sans-serif;
-    /* background-color: #04c4c4; */
-    
 }
 
 
-img{
+.bg{
     position: absolute;
     z-index: -1;
     filter: blur(10px);
@@ -16,12 +14,16 @@ img{
     height: auto;
 }
 
+.topspace{
+    height: 50px;
+}
+
 
 .container{
     display: flex;
     flex-direction: column;
     max-width: 80vw;
-    background: #ecd2b3bb;
+    background: #ecd2b371;
     border: 2px solid rgb(24, 23, 23);
     margin: auto;
     padding: 5px;
@@ -34,6 +36,24 @@ img{
     margin: 10px 10px;
     border: 2px solid black;
     border-radius: 10px;
+    padding: 3px;
+    outline: none;
+}
+
+
+.container input:hover{
+    transition-duration: 200ms;
+    border: 2px solid rgb(245, 20, 13);
+    color: #FFFFFF;
+    background: #000000;
+}
+
+
+.container input:focus{
+    transition-duration: 200ms;
+    border: 2px solid rgb(245, 20, 13);
+    color: #FFFFFF;
+    background: #000000;
 }
 
 
@@ -43,8 +63,22 @@ img{
     margin: 10px 10px;
     border: 2px solid black;
     border-radius: 10px;
+    outline: none;
 }
 
+.container textarea:hover{
+    transition-duration: 200ms;
+    border: 2px solid rgb(245, 20, 13);
+    color: #FFFFFF;
+    background: #000000;
+}
+
+.container textarea:focus{
+    transition-duration: 200ms;
+    border: 2px solid rgb(245, 20, 13);
+    color: #FFFFFF;
+    background: #000000;
+}
 
 .btn{
     margin: 10px 10px;
@@ -56,20 +90,35 @@ img{
     color: lavenderblush;
     background-color: rgb(172, 23, 23);
 }
+
+
 .btn:hover{
     background-color: rgb(223, 130, 10);
     border: 2px solid rgb(236, 227, 227);
     color: rgb(64, 13, 100);
     padding: 5px 15px;
+    transition-duration: 500ms;
 }
 
 
 .container h1{
     color: #000000;
     text-shadow: 4px 3px 0px #7A7A7A;
-    font-weight: bolder;
     font-weight: 900;
+    padding-top: 20px;
 }
+
+
 .container h1:hover{
-    color: rgba(255,255,255,.3);
+    transition-duration: 500ms;
+    color: rgb(249, 254, 255);
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+}
+
+.submitmsg{
+    /* color: rgb(14, 122, 10); */
+    color: #eef3ed;
+    letter-spacing: .1em;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0,0,0,0.9);
+    
 }
