@@ -1,3 +1,44 @@
+<?php
+$msg = FALSE;
+if(isset($_POST['name'])){
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+
+
+    // Creating connection
+    $con = mysqli_connect($server, $username, $password);
+
+    // Checking connection
+    if(!$con){
+        die("connection to this database failed due to- " . mysqli_connect_error());    
+    }
+
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $age = $_POST['age'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $marital = $_POST['marital'];
+    $other = $_POST['other'];
+    
+
+    $sql = "INSERT INTO `demo_form`.`form_data` (`name`, `gender`, `age`, `email`, `phone`, `marital`, `other`, `currentdt`) VALUES ('$name', '$gender', '$age', '$email', '$phone', '$marital', '$other', current_timestamp());";
+    // echo $sql;
+    
+    if ($con->query($sql) === TRUE) {
+        $msg = TRUE;
+      } else {
+        echo "Error: " . $sql . "<br>" . $con->error;
+      }
+
+    // Closing connection
+    $con->close();
+ }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +59,11 @@
     <div class="container">
         <h1>This is My Sample Form</h1>
         <h3>Please Enter Your Details Here.</h3>
-        <p class="submitmsg">Thanks your form has been submitted successfully</p>
+        <?php
+            if($msg == TRUE){
+                echo '<p class="submitmsg">Congratulations your form has been submitted successfully</p>';
+            }
+        ?>
         <form action="index.php" method="post">
             <input type="text" name="name" id="name" placeholder="     Enter Your Full Name" >
             <input type="text" name="gender" id="gender" placeholder="     Enter Your Gender" >
@@ -26,7 +71,7 @@
             <input type="email" name="email" id="email" placeholder="     Enter Your email" >
             <input type="phone" name="phone" id="phone" placeholder="     Enter Your Phone no" >
             <input type="text" name="marital" id="marital" placeholder="     Enter Your Marital Status" >
-            <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Enter any other details here."></textarea>
+            <textarea name="other" id="other" cols="30" rows="10" placeholder="Enter any other details here."></textarea>
             <div class="button">
                 <button class="btn">Submit</button>
             </div>
