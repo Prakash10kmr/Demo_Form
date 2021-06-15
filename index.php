@@ -1,6 +1,9 @@
 <?php
+// Flag value declared FALSE in start
 $msg = FALSE;
+
 if(isset($_POST['name'])){
+    // connecton variables
     $server = "localhost";
     $username = "root";
     $password = "";
@@ -14,19 +17,21 @@ if(isset($_POST['name'])){
         die("connection to this database failed due to- " . mysqli_connect_error());    
     }
 
+    // Collect POST variables
     $name = $_POST['name'];
     $gender = $_POST['gender'];
     $age = $_POST['age'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $marital = $_POST['marital'];
-    $other = $_POST['other'];
-    
+    $other = $_POST['other'];    
 
     $sql = "INSERT INTO `demo_form`.`form_data` (`name`, `gender`, `age`, `email`, `phone`, `marital`, `other`, `currentdt`) VALUES ('$name', '$gender', '$age', '$email', '$phone', '$marital', '$other', current_timestamp());";
     // echo $sql;
     
+
     if ($con->query($sql) === TRUE) {
+        // Flag for successful insertion
         $msg = TRUE;
       } else {
         echo "Error: " . $sql . "<br>" . $con->error;
@@ -59,6 +64,7 @@ if(isset($_POST['name'])){
     <div class="container">
         <h1>This is My Sample Form</h1>
         <h3>Please Enter Your Details Here.</h3>
+        <!-- when flag is true this section gets executed and displays the message. -->
         <?php
             if($msg == TRUE){
                 echo '<p class="submitmsg">Congratulations your form has been submitted successfully</p>';
